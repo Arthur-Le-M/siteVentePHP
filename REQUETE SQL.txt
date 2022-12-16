@@ -1,0 +1,115 @@
+INSERT INTO table (nom, prix, url_images, console) VALUES 
+('Halo: Combat Evolved', 15.99, 'https://cdn.shopify.com/s/files/1/0948/7288/products/Halo_-_Combat_Evolved-4_800x.jpg?v=1571501997', 'Xbox'),
+('Fable', 10.46, 'https://www.theisozone.com/images/covers/ps2/p/fable.jpg', 'Xbox'),
+('Forza Motorsport', 13.95, 'https://gamershive.com/wp-content/uploads/2018/02/Forza-Motorsport-Game_Cover.jpg', 'Xbox'),
+('Knights of the Old Republic', 6.00, 'https://m.media-amazon.com/images/I/91Q9Xna1gOL._SX480_.jpg', 'Xbox'),
+('Jade Empire', 8.50, 'https://upload.wikimedia.org/wikipedia/en/thumb/8/83/Jade_Empire_cover_art.jpg/220px-Jade_Empire_cover_art.jpg', 'Xbox'),
+('Splinter Cell', 9.99, 'https://static.giantbomb.com/uploads/scale_small/15/158839/1259571-splintercell.png', 'Xbox'),
+('Project Gotham Racing', 5.99, 'https://upload.wikimedia.org/wikipedia/en/6/63/Project_Gothem_Racing_Cover.jpg', 'Xbox'),
+('Dead or Alive 3', 9.99, 'https://image.jeuxvideo.com/images-sm/xbox/d/o/doapxhufr-jaquette-avant.jpg', 'Xbox'),
+('MechAssault', 7.99, 'https://upload.wikimedia.org/wikipedia/en/b/b3/Mechassault_xbox.jpg', 'Xbox'),
+('NFL Fever', 4.99, 'https://upload.wikimedia.org/wikipedia/en/a/ae/NFL_Fever_Coverart.jpg', 'Xbox'),
+('Tony Hawk’s Pro Skater 3', 5.99, 'https://images-na.ssl-images-amazon.com/images/I/616oN3q7bBL._AC_SL1500_.jpg', 'Xbox'),
+('Return to Castle Wolfenstein', 11.99, 'https://upload.wikimedia.org/wikipedia/en/e/ea/Return_to_Castle_Wolfenstein_Coverart.png', 'Xbox'),
+('Star Wars: The Clone Wars', 16.99, 'https://images-na.ssl-images-amazon.com/images/I/91hDrSiUT1L._AC_SL1500_.jpg', 'Xbox'),
+('Mortal Kombat: Deadly Alliance', 14.99, 'https://upload.wikimedia.org/wikipedia/en/0/07/MKDA_GameBoxFront.png', 'Xbox'),
+('Max Payne', 7.49, 'https://www.mobygames.com/images/shots/l/144561-max-payne-xbox-screenshot-the-lobby.png', 'Xbox'),
+('Tom Clancy’s Ghost Recon', 9.99, 'https://upload.wikimedia.org/wikipedia/en/d/de/Ghost-recon-xbox-coverart.jpg', 'Xbox'),
+('Unreal Championship', 11.24, 'https://upload.wikimedia.org/wikipedia/en/2/20/Unreal_Championship_Coverart.png', 'Xbox'),
+('Panzer Dragoon Orta', 10.99, 'https://upload.wikimedia.org/wikipedia/en/a/a1/Panzer_Dragoon_Orta_Coverart.png', 'Xbox'),
+('Airforce Delta Storm', 7.00, 'https://upload.wikimedia.org/wikipedia/en/b/b3/AFDSBoxArt.jpg', 'Xbox'),
+('Madden NFL 2003', 7.49, 'https://upload.wikimedia.org/wikipedia/en/4/4c/Madden_2003_box.jpg', 'Xbox'),
+('Tom Clancy’s Rainbow Six 3', 12.99, 'https://upload.wikimedia.org/wikipedia/en/8/89/Rainbow_Six_3_Coverart.png', 'Xbox'),
+('Blinx: The Time Sweeper', 4.97, 'https://upload.wikimedia.org/wikipedia/en/e/ef/Blinx_The_Time_Sweeper.jpg', 'Xbox'),
+('Chronicles of Riddick: Escape From Butcher Bay', 17.98, 'https://upload.wikimedia.org/wikipedia/en/5/5a/Chronicles_of_Riddick_Butcher_Bay_Coverart.png', 'Xbox'),
+('Midtown Madness 3', 15.99, 'https://upload.wikimedia.org/wikipedia/en/f/fe/Midtown_Madness_3_Coverart.png', 'Xbox');
+
+INSERT INTO table (idJeux, idGenre) VALUES 
+(31, 1), (31, 12), (31, 18),
+(32, 1), (32, 6), (32, 18),
+(33, 4), (33, 18),
+(34, 3), (34, 6), (34, 11), (34, 18),
+(35, 1), (35, 6), (35, 18),
+(36, 1), (36, 12), (36, 18),
+(37, 1), (37, 4), (37, 18),
+(38, 3), (38, 18),
+(39, 1), (39, 12), (39, 18),
+(40, 1), (40, 14), (40, 18),
+(41, 1), (41, 14), (41, 18),
+(42, 1), (42, 12), (42, 18),
+(43, 1), (43, 6), (43, 18),
+(44, 3), (44, 18),
+(45, 1), (45, 12), (45, 18),
+(46, 1), (46, 12), (46, 18),
+(47, 1), (47, 12), (47, 18),
+(48, 1), (48, 18),
+(49, 1), (49, 12), (49, 18),
+(50, 1), (50, 14), (50, 18),
+(51, 1), (51, 12), (51, 18),
+(52, 1), (52, 7), (52, 18),
+(53, 1), (53, 11), (53, 18),
+(54, 1), (54, 4), (54, 18);
+
+
+ALTER TABLE game ADD COLUMN description TEXT;
+UPDATE game SET description = 'Final Fantasy VII est un jeu de rôle sorti en 1997 sur Playstation 1. Il met en scène Cloud Strife, un ancien soldat qui se retrouve impliqué dans un conflit opposant les humains aux créatures surnaturelles qu'ils ont créées. Le jeu est reconnu pour son monde ouvert, ses graphismes, ses combats dynamiques et sa musique incroyable.' WHERE id = 16;
+UPDATE game SET description = 'Tekken 3 est un jeu de combat sorti en 1998 sur Playstation 1. Il propose une variété de six personnages avec des styles de combat et des habiletés différentes, ainsi qu'un mode d'arcade, un mode de combat à deux joueurs et un mode mini-jeu. Ce jeu est connu pour sa jouabilité et son côté réaliste.' WHERE id = 17;
+UPDATE game SET description = 'Crash Bandicoot est un jeu d'action-aventure sorti en 1996 sur Playstation 1. Il met en scène Crash, un raton-laveur mutant qui doit affronter le Docteur Neo Cortex et sauver sa famille. Ce jeu est connu pour ses graphismes, ses musiques entraînantes, ses séquences de plateforme difficiles et ses puzzles astucieux.' WHERE id = 18;
+UPDATE game
+SET description = 'Resident Evil 2 est un jeu d'horreur sorti en 1998 sur Playstation 1. Il met en scène Claire Redfield et Leon Kennedy qui explorent Raccoon City infestée de zombies et d'autres monstres mortels. Ce jeu est connu pour son atmosphère oppressante, ses puzzles difficiles et ses cinématiques captivantes.'
+WHERE id = 19;
+UPDATE game
+SET description = 'Gran Turismo est un jeu de course sorti en 1997 sur Playstation 1. Il propose une vaste sélection de voitures et de circuits pour la course et présente des graphismes et des sons polygonaux de qualité. Ce jeu est connu pour ses courses stimulantes, ses challenges difficiles et sa variété de véhicules.'
+WHERE id = 20;
+UPDATE game
+SET description = 'Spyro the Dragon est un jeu d'action-aventure sorti en 1998 sur Playstation 1. Il met en scène Spyro, un dragon qui doit voyager à travers les Royaumes de Dragonia pour vaincre les personnages maléfiques qui les détiennent. Ce jeu est connu pour ses personnages colorés, son histoire amusante et ses mondes variés.'
+WHERE id = 21;
+UPDATE game
+SET description = 'Metal Gear Solid est un jeu d'infiltration sorti en 1998 sur Playstation 1. Il met en scène Solid Snake qui tente d'arrêter le MILF pour empêcher le sabotage nucléaire du réseau d'ordinateurs de la base militaire Shadow Moses. Ce jeu est connu pour ses séquences d'action palpitantes, ses intrigues complexes et son moteur graphique innovant.'
+WHERE id = 22;
+UPDATE game
+SET description = 'Suikoden II est un jeu de rôle tactique sorti en 1999 sur Playstation 1. Il met en scène des personnages qui se révoltent contre un gouvernement corrompu. Le jeu est reconnu pour ses centaines de personnages uniques, son moteur graphique amélioré et son système d'armes spéciales.'
+WHERE id = 23;
+UPDATE game
+SET description = 'Silent Hill est un jeu d'horreur sorti en 1999 sur Playstation 1. Il met en scène Harry Mason qui explore la ville baignée de brouillard Silent Hill afin de retrouver sa fille. Ce jeu est connu pour ses graphismes détaillés, ses musiques terrifiantes et ses situations très effrayantes.'
+WHERE id = 24;
+UPDATE game
+SET description = 'Castlevania: Symphony of the Night est un jeu d'action-aventure sorti en 1997 sur Playstation 1. Il met en scène Alucard qui explore le château Dracula à la recherche de son père Dracula. Ce jeu est connu pour ses nombreux secrets, ses armes épiques et ses boss extrêmement difficiles.'
+WHERE id = 25;
+UPDATE game
+SET description = 'Chrono Cross est un jeu de rôle sorti en 2000 sur Playstation 1. Il met en scène Serge et plusieurs autres personnages qui voyagent entre les mondes dans le but de sauver leur terre natale. Le jeu est reconnu pour ses personnages charismatiques, ses superbes graphismes et ses musiques mémorables.'
+WHERE id = 26;
+UPDATE game
+SET description = 'Dino Crisis est un jeu d'action-aventure sorti en 1999 sur Playstation 1. Il met en scène Regina qui se bat pour sauver des scientifiques pris au piège dans un complexe plein de dinosaures. Ce jeu est connu pour ses séquences d'action palpitantes, ses graphismes détaillés et l'ambiance inquiétante qu'il propose.'
+WHERE id = 27;
+UPDATE game
+SET description = 'Oddworld: Abe's Oddysee est un jeu de plates-formes sorti en 1997 sur Playstation 1. Il met en scène Abe, un esclave travailleur qui se retrouve dans une entreprise malfaisante et doit s'échapper en utilisant ses pouvoirs psychiques. Ce jeu est connu pour ses graphismes adorables, ses ennemis particuliers et ses énigmes compliquées.'
+WHERE id = 28;
+UPDATE game
+SET description = 'Soulcalibur est un jeu de combat sorti en 1998 sur Playstation 1. Il offre une variété de personnages avec des styles de combat, des armes et des capacités uniques. Ce jeu est connu pour ses combats intenses, ses coups spéciaux spectaculaires et sa jouabilité très fluide.'
+WHERE id = 29;
+UPDATE game SET Description = 'Vagrant Story est un jeu de rôle action-aventure développé par Square et édité par Sony Computer Entertainment en 2000 sur PlayStation 1. Il a été créé par Yasumi Matsuno, qui a créé d'autres jeux de rôle célèbres tels que Final Fantasy Tactics et Tactics Ogre.' WHERE Id = 30;
+UPDATE game SET Description = 'Halo : Combat Evolved est un jeu vidéo de tir à la première personne développé par Bungie Studios et publié par Microsoft Game Studios le 15 novembre 2001 sur Xbox. C'est le premier jeu de la série Halo.' WHERE Id = 31;
+UPDATE game SET Description = 'Fable est un jeu d'action-aventure en monde ouvert développé par Big Blue Box et édité par Microsoft Game Studios le 14 septembre 2004 sur Xbox. Le jeu fait partie de la série Fable.' WHERE Id = 32;
+UPDATE game SET Description = 'Forza Motorsport est un jeu de course automobile développé par Turn 10 Studios et édité par Microsoft Game Studios le 3 mai 2005 sur Xbox. Il est le premier jeu de la série Forza Motorsport.' WHERE Id = 33;
+UPDATE game SET Description = 'Star Wars : Knights of the Old Republic est un jeu de rôle développé par BioWare et édité par LucasArts en juillet 2003 sur Xbox. Il est le premier jeu de la série Knights of the Old Republic.' WHERE Id = 34;
+UPDATE game SET Description = 'Jade Empire est un jeu vidéo d'action-RPG développé par BioWare et édité par Microsoft Game Studios le 12 avril 2005 sur Xbox. Le jeu fait partie de la série Jade Empire.' WHERE Id = 35;
+UPDATE game SET Description = 'Tom Clancy's Splinter Cell est une série de jeux vidéo d'infiltration développée par Ubisoft et éditée par Ubisoft et Ubi Soft. Le jeu a été initialement publié en 2002 sur Xbox.' WHERE Id = 36;
+UPDATE game SET Description = 'Project Gotham Racing est un jeu de course développé par Bizarre Creations et édité par Microsoft Game Studios le 14 novembre 2002 sur Xbox. Il est le premier jeu de la série Project Gotham Racing.' WHERE Id = 37;
+UPDATE game SET Description = 'Dead or Alive 3 est un jeu de combat développé par Team Ninja et édité par Tecmo en 2001 sur Xbox. Il est le troisième jeu de la série Dead or Alive.' WHERE Id = 38;
+UPDATE game SET Description = 'MechAssault est un jeu de combat développé par Day 1 Studios et édité par Microsoft Game Studios le 11 novembre 2002 sur Xbox. Il est le premier jeu de la série MechAssault.' WHERE Id = 39;
+UPDATE game SET Description = 'NFL Fever est un jeu vidéo de football américain développé par Microsoft et publié par Microsoft Game Studios le 18 novembre 2002 sur Xbox. Il est le premier jeu de la série NFL Fever.' WHERE Id = 40;
+UPDATE game SET Description = 'Tony Hawk's Pro Skater 3 est un jeu de skateboard développé par Neversoft et publié par Activision le 28 octobre 2001 sur Xbox. Il est le troisième jeu de la série Tony Hawk's Pro Skater.' WHERE Id = 41;
+UPDATE game SET Description = 'Return to Castle Wolfenstein est un jeu vidéo de tir à la première personne développé par Gray Matter Interactive et publié par Activision le 19 novembre 2001 sur Xbox. Il est le premier jeu de la série de Wolfenstein.' WHERE Id = 42;
+UPDATE game SET Description = 'Star Wars : The Clone Wars est un jeu vidéo d'action-aventure développé par Pandemic Studios et publié par LucasArts le 14 novembre 2003 sur Xbox. Il est le premier jeu de la série Clone Wars.' WHERE Id = 43;
+UPDATE game SET Description = 'Mortal Kombat : Deadly Alliance est un jeu de combat développé par Midway Games et édité par Midway Games le 16 novembre 2002 sur Xbox. Il est le premier jeu de la série Mortal Kombat : Deadly Alliance.' WHERE Id = 44;
+UPDATE game SET Description = 'Max Payne est un jeu vidéo d'action-aventure développé par Remedy Entertainment et publié par Gathering of Developers en 2001 sur Xbox. Il est le premier jeu de la série Max Payne.' WHERE Id = 45;
+UPDATE game SET Description = "Tom Clancy's Ghost Recon est un jeu de tir tactique développé par Red Storm Entertainment et édité par Ubisoft en novembre 2002 sur Xbox. Il est le premier jeu de la série Ghost Recon." WHERE Id = 46;
+UPDATE game SET Description = 'Unreal Championship est un jeu de combat développé par Digital Extremes et édité par Atari le 24 novembre 2002 sur Xbox. Il est le premier jeu de la série Unreal Championship.' WHERE Id = 47;
+UPDATE game SET Description = 'Panzer Dragoon Orta est un jeu vidéo de tir à la troisième personne développé par Smilebit et édité par Sega en 2002 sur Xbox. Il est le quatrième jeu de la série Panzer Dragoon.' WHERE Id = 48;
+UPDATE game SET Description = 'Airforce Delta Storm est un jeu de simulation de vol de combat développé par Konami et édité par Konami en 2001 sur Xbox. Il est le deuxième jeu de la série Airforce Delta.' WHERE Id = 49;
+UPDATE game SET Description = "Madden NFL 2003 est un jeu vidéo de football américain développé par EA Tiburon et édité par Electronic Arts le 24 août 2002 sur Xbox. Il est le douzième jeu de la série Madden NFL." WHERE Id = 50;
+UPDATE game SET Description = "Tom Clancy's Rainbow Six 3 est un jeu de tir tactique développé par Ubisoft et édité par Ubisoft le 23 septembre 2003 sur Xbox. Il est le troisième jeu de la série Rainbow Six." WHERE Id = 51;
+UPDATE game SET Description = 'Blinx: The Time Sweeper est un jeu de plateforme et d'action développé par Artoon et édité par Microsoft Game Studios le 29 octobre 2002 sur Xbox. Il est le premier jeu de la série Blinx.' WHERE Id = 52;
+UPDATE game SET Description = 'The Chronicles of Riddick : Escape From Butcher Bay est un jeu vidéo d'action-aventure développé par Starbreeze Studios et publié par Vivendi Universal Games le 5 juin 2004 sur Xbox. Il est le premier jeu de la série The Chronicles of Riddick.' WHERE Id = 53;
+UPDATE game SET Description = 'Midtown Madness 3 est un jeu de course développé par Digital Illusions CE et édité par Microsoft Game Studios le 13 mai 2003 sur Xbox. Il est le troisième jeu de la série Midtown Madness.' WHERE Id = 54;
