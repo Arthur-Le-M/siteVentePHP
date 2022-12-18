@@ -1,8 +1,8 @@
 <?php
 $url = $_GET['url'];
 // Paramètres de l'image
-$width = 100;
-$height = 100;
+$width = $_GET["width"];
+$height = $_GET["height"];
 
 // Charger l'image originale
 $original_image = imagecreatefromstring(file_get_contents($url));
