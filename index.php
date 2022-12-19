@@ -75,7 +75,7 @@ $conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','
                     $req->execute(['idJeux'=>$res[$i]['id']]);
                     $resGenreJeux = $req->fetchAll();
                     print("<div class='article'>
-                    <img class='articleImg' src='".$res[$i]['url_images']."' alt='imageArticle'>
+                    <img class='articleImg' src='traitementImage.php?url=".$res[$i]['url_images']."&width=500&height=500' alt='imageArticle'>
                     <h4 class='articleTitre'>".$res[$i]['nom']."</h4>
                     <div class='articleListGenre'>");
                         for($y=0;$y<count($resGenreJeux);$y++){
@@ -84,13 +84,15 @@ $conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','
                     print("
                     </div>
                     <p class='articlePrix'>".$res[$i]['prix']."€</p>
-                    <a class='bouton' href='addToCart.php?id=".$res[$i]['id']."'><div class ='articleButtonAjouterPanier'>AJOUTER AU PANIER</div></a>
+                    
+                    <a class='boutonAddToCart'><div class ='articleButtonAjouterPanier' name=".$res[$i]['id']." >AJOUTER AU PANIER</div></a>
                 </div>");
                 }
                 ?>
                 </article>
             </section>
         </main>
+        <script src="app.js"></script>
         <script src="script.js"></script>
     </body>
 </html>

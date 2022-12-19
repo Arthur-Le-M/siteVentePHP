@@ -6,7 +6,6 @@ images.forEach(image => {
         const percentY = e.offsetY  / image.offsetHeight * 100;
         const rotateX = (percentY - 50) / 50 * 20;
         const rotateY = (percentX - 50) / 50 * 20;
-        console.log(e.offsetY)
         image.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     })
 
@@ -15,6 +14,7 @@ images.forEach(image => {
         image.style.transform = 'none';
     })
 
+    //IMAGE MODALE
     //Quand on clique sur l'image
     image.addEventListener('click', function() {
         const modal = document.querySelector('#modal');

@@ -134,6 +134,12 @@ header{
     justify-content: center;
 }
 
+.boutonAddToCart{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .articleButtonAjouterPanier{
     background-color: #22651b;
     width: 100%;
@@ -141,8 +147,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 13px
-    
+    font-size: 13px;
+    cursor: pointer;
 }
 
 /* Modal */
@@ -159,8 +165,8 @@ header{
     bottom: 0;
     align-items: center;
     justify-content: space-around;
-    background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
+    backdrop-filter:blur(30px);
   }
   
   #modalDesc{
