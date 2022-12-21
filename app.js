@@ -1,4 +1,6 @@
 boutonAjouterAuPanier = document.querySelectorAll(".boutonAddToCart")
+notification = document.querySelector(".notif");
+var nombreNotif = 0
 
 for(var i=0; i<boutonAjouterAuPanier.length; i++){
     boutonAjouterAuPanier[i].addEventListener('click', e=>{
@@ -14,6 +16,18 @@ for(var i=0; i<boutonAjouterAuPanier.length; i++){
             if (xhr.readyState == 4 && xhr.status == 200) {
               //Réussite
               console.log("Item " + id + " ajouté au panier")
+              var notifAddCart = document.createElement('div')
+              notifAddCart.className = "notifvisible"
+              notifAddCart.innerHTML = notification.innerHTML
+              notifAddCart.style.bottom = ((10 + 45) * nombreNotif).toString() + "px";
+              notifAddCart.children[0].innerHTML = e.target.parentNode.parentNode.children[1].innerHTML + " à été ajouté au panier"
+              
+              document.body.appendChild(notifAddCart);
+              nombreNotif += 1;
+              setTimeout(function() {
+                notifAddCart.remove()
+                nombreNotif -= 1
+              }, 3000);
             } else {
               //Echec
               console.log("Fail")

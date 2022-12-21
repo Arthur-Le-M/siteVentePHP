@@ -19,7 +19,14 @@ images.forEach(image => {
     image.addEventListener('click', function() {
         const modal = document.querySelector('#modal');
         const modalImage = document.querySelector('#modalImage');
+        const modalTitre = document.querySelector('#titreJeuxModal');
+        const modalPrix = document.querySelector('#prixJeuModal');
         modalImage.src = this.src;
+        //Récupération des information
+        parentImage = this.parentNode
+        enfant = parentImage.children
+        modalTitre.innerHTML = enfant[1].innerHTML
+        modalPrix.innerHTML = enfant[3].innerHTML
         modal.classList.add('visible');
       });
     

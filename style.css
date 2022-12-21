@@ -151,6 +151,14 @@ header{
     cursor: pointer;
 }
 
+.articleButtonAjouterPanier:hover{
+    background-color: #2e7926;
+}
+
+.articleButtonAjouterPanier:active{
+    background-color: #174312;
+}
+
 /* Modal */
 #modal {
     display: none;
@@ -207,6 +215,27 @@ header{
 
   
 /* Fin modal */
+
+/* Notification */
+.notif{
+    display: none;
+}
+.notifvisible{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background-color: #575757;
+    opacity: 90%;
+    right: 10px;
+    bottom: 10px;
+    width: 20%;
+    height: 40px;
+    flex-direction: column;
+    border-radius: 5px;
+}
+/*Fin Notif*/
 
 /* FIN Page principal */
 

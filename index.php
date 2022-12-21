@@ -52,6 +52,9 @@ $conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','
             </div>
             <img src="" id="modalImage">
         </div>
+        <div class="notif">
+            <h5 class="titreNotif">Hello World ajouté au panier</h5>
+        </div>
             <section class="articleContainer">
                 <h3 class="titreArticleContainer">🔥 ALL 🔥</h3>
                 <article class="listArticle">
