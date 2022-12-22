@@ -32,10 +32,13 @@ $conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','
                 </ul>
             </nav>
             <a id='panierEnHaut' href="cart.php"><img src="images/panier.svg" id="iconPanier" alt="iconPanier">
-                <?php 
+                <div class="nbArticleContainer">0</div>
+                <?php
+                /*
                 if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0){
                     print('<div class="nbArticleContainer">'.count($_SESSION['cart']).'</div>');
                 }
+                */
                 ?>
                 
             </a>

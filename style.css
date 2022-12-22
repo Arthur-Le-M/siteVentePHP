@@ -284,6 +284,7 @@ main{
 
 .supressionPanier{
     color: rgb(255, 118, 118);
+    cursor: pointer;
 }
 
 .recapCart{
