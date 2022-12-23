@@ -44,7 +44,7 @@ $conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','
         </header>
         <!-- Main -->
         <main>
-            <form id="formulairePaiement">
+            <form id="formulairePaiement" method="POST" action="traitementPaiement.php">
                 <h3 id="titreFormulaire">💳Paiement par carte bancaire💳</h3>
                 <label for="numCB" class="labelForm">Numéro carte bancaire</label>
                 <input type="text" class="inputForm" name="numCB" placeholder="numéro carte bancaire" maxlength="16" pattern="[0-9]*">

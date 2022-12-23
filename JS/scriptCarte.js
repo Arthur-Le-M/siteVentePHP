@@ -21,12 +21,25 @@ images.forEach(image => {
         const modalImage = document.querySelector('#modalImage');
         const modalTitre = document.querySelector('#titreJeuxModal');
         const modalPrix = document.querySelector('#prixJeuModal');
+        const modalDesc = document.querySelector('#descJeuxModal');
         modalImage.src = this.src;
         //Récupération des information
         parentImage = this.parentNode
         enfant = parentImage.children
+        var id = parentImage.getAttribute('name')
         modalTitre.innerHTML = enfant[1].innerHTML
         modalPrix.innerHTML = enfant[3].innerHTML
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'game.php?id=' + id);
+        xhr.send();
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            const jeu = JSON.parse(xhr.response);
+            modalDesc.innerHTML = jeu['description']
+          } else {
+            console.error('An error occurred:', xhr.status);
+          }
+        };
         modal.classList.add('visible');
       });
     
