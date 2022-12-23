@@ -98,7 +98,7 @@ $conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','
                 </article>
             </section>
         </main>
-        <script src="app.js"></script>
-        <script src="script.js"></script>
+        <script src="JS/app.js"></script>
+        <script src="JS/scriptCarte.js"></script>
     </body>
 </html>

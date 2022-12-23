@@ -320,3 +320,46 @@ main{
     font-weight: normal;
     text-decoration: underline;
 }
+/* Fin Page Panier */
+
+/* Page Paiement */
+
+#formulairePaiement{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.inputForm{
+    background-color:#3e3e3e;
+    border: none;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.labelForm{
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.boutonForm{
+    margin-top: 30px;
+    border: none;
+    width: 50%;
+    background-color:#22651b;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.expirationContainer{
+    margin-top: 10px;
+}
+
+.selectExpiration{
+    background-color: #3e3e3e;
+}
+/* Fin Page Paiement */

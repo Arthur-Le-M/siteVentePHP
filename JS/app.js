@@ -15,7 +15,6 @@ for(var i=0; i<boutonAjouterAuPanier.length; i++){
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4 && xhr.status == 200) {
               //Réussite
-              console.log("Item " + id + " ajouté au panier")
               afficherTaillePanier()
               var notifAddCart = document.createElement('div')
               notifAddCart.className = "notifvisible"
@@ -30,7 +29,6 @@ for(var i=0; i<boutonAjouterAuPanier.length; i++){
               }, 3000);
             } else {
               //Echec
-              console.log("Fail")
             }
           };
     })
@@ -49,3 +47,5 @@ function afficherTaillePanier(){
     taillePanier.innerHTML = cart.length
   });
 }
+
+afficherTaillePanier()
