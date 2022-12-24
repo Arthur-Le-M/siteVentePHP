@@ -362,4 +362,16 @@ main{
 .selectExpiration{
     background-color: #3e3e3e;
 }
+
+.resPaiement{
+    background-color: #3a5737;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.resPaiement a{
+    text-decoration: underline;
+    margin-top: 10px;
+}
 /* Fin Page Paiement */

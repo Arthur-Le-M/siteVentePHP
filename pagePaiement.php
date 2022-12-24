@@ -44,6 +44,9 @@ $conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','
         </header>
         <!-- Main -->
         <main>
+            <?php
+                if(!isset($_GET["resPaiement"])){
+            ?>
             <form id="formulairePaiement" method="POST" action="traitementPaiement.php">
                 <h3 id="titreFormulaire">💳Paiement par carte bancaire💳</h3>
                 <label for="numCB" class="labelForm">Numéro carte bancaire</label>
@@ -80,6 +83,17 @@ $conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','
                 <input type="text" class="inputForm" name="CCV" placeholder="CCV" maxlength="3" pattern="[0-9]*">
                 <input type="submit" value="Payer" class="boutonForm">
             </form>
+            <?php
+            }
+            else{
+                if($_GET['resPaiement'] == "success"){
+                    print(" <article class='resPaiement'>
+                                <h3>Votre paiement à été validé</h3>
+                                <a href='index.php'>Retour à la page d'accueil</a>
+                            </article>");
+                }
+            }
+            ?>
         </main>
         <script src="JS/app.js"></script>
     </body>
