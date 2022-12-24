@@ -374,4 +374,9 @@ main{
     text-decoration: underline;
     margin-top: 10px;
 }
+
+.erreur{
+    color: red;
+    font-weight: bold;
+}
 /* Fin Page Paiement */

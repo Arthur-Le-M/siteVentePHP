@@ -45,7 +45,10 @@ $conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','
         <!-- Main -->
         <main>
             <?php
-                if(!isset($_GET["resPaiement"])){
+                if(!isset($_GET["resPaiement"]) || $_GET["resPaiement"] == "error"){
+                    if(isset($_GET["resPaiement"]) && $_GET["resPaiement"] == "error"){
+                        print("<p class='erreur'> Les informations de la cartes ne sont pas valide</p>");
+                    }
             ?>
             <form id="formulairePaiement" method="POST" action="traitementPaiement.php">
                 <h3 id="titreFormulaire">💳Paiement par carte bancaire💳</h3>

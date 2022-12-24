@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $numCarte = $_POST["numCB"];
 $moisExpiration = $_POST["expirationMois"];
 $anneeExpiration = $_POST["expirationAnnee"];
@@ -24,10 +24,11 @@ function verifExpiration($mois, $annee){
 }
 
 if(verifNumCarte($numCarte) && verifExpiration($moisExpiration , $anneeExpiration)){
+    unset($_SESSION['cart']);
     header("location: pagePaiement.php?resPaiement=success");
 }
 else{
-    print("Pas validé");
+    header("location: pagePaiement.php?resPaiement=error");
 }
 
 ?>

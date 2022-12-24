@@ -79,7 +79,7 @@ $conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','
                         ?>
                 </article>
                 <article class="checkout">
-                    <a class="buttonCheckout" href="#">Procéder au paiement</a>
+                    <a class="buttonCheckout" href="pagePaiement.php">Procéder au paiement</a>
                     <a class="buttonContinue" href="index.php">Continuer le shopping</a>
                 </article>
             </section>
