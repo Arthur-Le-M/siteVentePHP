@@ -21,9 +21,9 @@ images.forEach(image => {
         const modalImage = document.querySelector('#modalImage');
         const modalTitre = document.querySelector('#titreJeuxModal');
         const modalPrix = document.querySelector('#prixJeuModal');
+        const modalContainerGenre = document.querySelector("#genreContainerModal");
         var modalDesc = document.querySelector('#descJeuxModal');
-        var modalButton = document.querySelector('.boutonModal');
-        console.log(modalButton);
+        var sectionModal = document.querySelector('#modalDesc');
         modalImage.src = this.src;
         //Récupération des information
         parentImage = this.parentNode
@@ -38,12 +38,28 @@ images.forEach(image => {
           if (xhr.status === 200) {
             const jeu = JSON.parse(xhr.response);
             modalDesc.innerHTML = jeu['description']
+            for(i=0; i<jeu['libelleGenres'].length; i++){
+              let objGenre = document.createElement('p');
+              objGenre.classList.add("genreModaux");
+              objGenre.innerHTML = jeu['libelleGenres'][i];
+              modalContainerGenre.appendChild(objGenre);
+
+            }
           } else {
             console.error('An error occurred:', xhr.status);
           }
         };
         //Bouton
-        modalButton.addEventListener("click", () => boutonModalClique(id, modalTitre.innerHTML));
+        //Création de l'objet
+        let boutonModal = document.createElement('a');
+        boutonModal.className = 'boutonModal';
+        let div = document.createElement('div');
+        div.innerHTML = "AJOUTER AU PANIER";
+        div.className = 'articleButtonAjouterPanierModal';
+        boutonModal.appendChild(div);
+        sectionModal.appendChild(boutonModal);
+
+        boutonModal.addEventListener("click", () => boutonModalClique(id, modalTitre.innerHTML));
         modal.classList.add('visible');
 });
     
@@ -62,13 +78,18 @@ modalImage.addEventListener('mousemove', e => {
 modalImage.addEventListener('mouseout', ()=>{
     modalImage.style.transform = 'none';
 })
-
-var modalButton = document.querySelector('.boutonModal');
 const modal = document.querySelector('#modal');
+var modalContainerGenre = document.querySelector("#genreContainerModal");
 modal.addEventListener('click', function(event){
   if (event.target === modal) {
+    //Suppression bouton
+    var modalButton = document.querySelector('.boutonModal');
+    var sectionModal = document.querySelector('#modalDesc');
+    sectionModal.removeChild(modalButton);
     modal.classList.remove('visible');
-    modalButton.removeEventListener()
+    while (modalContainerGenre.firstChild) {
+      modalContainerGenre.removeChild(modalContainerGenre.firstChild);
+    }
   }
 });
 

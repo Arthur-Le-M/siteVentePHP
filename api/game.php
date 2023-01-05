@@ -1,7 +1,7 @@
 <?php 
 $id = $_GET['id'];
 
-$conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','');
+require "../config.php";
 
 $req =  "SELECT * FROM game WHERE id = :id";
 $req = $conn->prepare($req);
@@ -14,12 +14,23 @@ $url_images = $res['url_images'];
 $console = $res['console'];
 $description = $res['description'];
 
+$req =  "SELECT libelle FROM genres JOIN genregameassociation ON genres.id = genregameassociation.idGenre WHERE idJeux = :id";
+$req = $conn->prepare($req);
+$req->execute(['id'=>$id]);
+$res = $req->fetchAll();
+
+$listeGenre = [];
+foreach ($res as $row) {
+  $listeGenre[] = $row['libelle'];
+}
+
 $information = [
     'nom' => $nom,
     'prix' => $prix,
     'url_images' => $url_images,
     'console' => $console,
-    'description' => $description
+    'description' => $description,
+    'libelleGenres' => $listeGenre
   ];
   
   $json = json_encode($information);

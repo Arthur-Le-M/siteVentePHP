@@ -194,6 +194,21 @@ header{
     margin-bottom: 6%;
   }
 
+  #genreContainerModal{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .genreModaux{
+    background-color: #575757;
+    padding: 4px;
+    margin: 5px;
+    border-radius: 6px;
+  }
+
   #prixJeuModal{
     font-weight: bold;
     font-size: 20px;
@@ -214,9 +229,14 @@ header{
   }
 
   .boutonModal{
-    width: 100%;
+    cursor: pointer;
+    width: 70%;
     display: flex;
     justify-content: center;
+  }
+
+  .boutonModal div{
+    width: 100%;
   }
 
 /* Fin modal */

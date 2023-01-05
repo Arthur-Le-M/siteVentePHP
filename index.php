@@ -53,8 +53,10 @@ require 'config.php';
             <div id="modalDesc">
                 <h3 id="titreJeuxModal">Titre jeu</h3>
                 <p id="descJeuxModal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nisi vel, iure ipsam iste, suscipit exercitationem enim fuga autem, quo porro molestias dolores dolor vero minima quae cum? Dolores, enim?</p>
+                <div id="genreContainerModal">
+                </div>
                 <p id="prixJeuModal">10€</p>
-                <a class="boutonModal" href="#"><div class ='articleButtonAjouterPanierModal'>AJOUTER AU PANIER</div></a>
+                
             </div>
             <img src="" id="modalImage">
         </div>
