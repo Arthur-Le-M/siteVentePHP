@@ -1,10 +1,5 @@
 <?php
-//Démarrage de la session
-session_start();
-
-//Connexion à la base de données
-$conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','');
-
+require 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +54,7 @@ $conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','
                             $req->execute(['id'=>$id]);
                             $res = $req->fetch();
                             print('<div class="articlePanier" name="'.$id.'">
-                                <img class="imagesArticlePanier" src="traitementImage.php?url='.$res['url_images'].'&width=200&height=200" alt="imageDuJeu">
+                                <img class="imagesArticlePanier" src="api/traitementImage.php?url='.$res['url_images'].'&width=200&height=200" alt="imageDuJeu">
                                 <h4 class="titreArticlePanier">'.$res['nom'].'</h4>
                                 <p class="prixArticlePanier">'.$res['prix'].'€</p>
                                 <a class="supressionPanier" href="removeToCart.php?id='.$id.'">Supprimer</a>

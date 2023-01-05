@@ -6,8 +6,8 @@ var nombreNotif = 0
 
 for(var i=0; i<boutonAjouterAuPanier.length; i++){
     boutonAjouterAuPanier[i].addEventListener('click', e=>{
-          id = e.target.getAttribute('name');
-          url = "addToCart.php?id=" + id
+        id = e.target.getAttribute('name');
+        url = "api/addToCart.php?id=" + id
         //Requête ajax
         xhr = new XMLHttpRequest();
         xhr.open("GET", url, true);
@@ -39,7 +39,7 @@ function afficherTaillePanier(){
   taillePanier = document.querySelector(".nbArticleContainer")
   //Appel du script qui renvoie la liste du panier sous forme JSON
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'listeCarte.php');
+  xhr.open('GET', 'api/listeCarte.php');
   xhr.send();
   xhr.addEventListener('load', function() {
     const cart = JSON.parse(xhr.response);

@@ -1,10 +1,5 @@
 <?php
-//Démarrage de la session
-session_start();
-
-//Connexion à la base de données
-$conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','');
-
+require 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -46,12 +41,20 @@ $conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','
         </header>
         <!-- Main -->
         <main>
+            <?php 
+            if(isset($_SESSION["admin"]) && $_SESSION["admin"] == true){
+                        print('<section id="sectionAdmin">
+                        <h2 id="titreSectionAdmin">👑 Mode administrateur activé 👑</h2>
+                        <a class="boutonAdmin" href="ajouterJeu.php">➕ Ajouter un jeu</a>
+                        <a class="boutonAdmin" href="deconnexionAdmin.php">🚪 Déconnexion</a>
+                    </section>');
+                    }?>
         <div id="modal">
             <div id="modalDesc">
                 <h3 id="titreJeuxModal">Titre jeu</h3>
                 <p id="descJeuxModal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nisi vel, iure ipsam iste, suscipit exercitationem enim fuga autem, quo porro molestias dolores dolor vero minima quae cum? Dolores, enim?</p>
                 <p id="prixJeuModal">10€</p>
-                <a class="bouton" href="#"><div class ='articleButtonAjouterPanierModal'>AJOUTER AU PANIER</div></a>
+                <a class="boutonModal" href="#"><div class ='articleButtonAjouterPanierModal'>AJOUTER AU PANIER</div></a>
             </div>
             <img src="" id="modalImage">
         </div>
@@ -81,7 +84,7 @@ $conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','
                     $req->execute(['idJeux'=>$res[$i]['id']]);
                     $resGenreJeux = $req->fetchAll();
                     print("<div class='article' name='".$res[$i]['id']."'>
-                    <img class='articleImg' src='traitementImage.php?url=".$res[$i]['url_images']."&width=500&height=500' alt='imageArticle'>
+                    <img class='articleImg' src='api/traitementImage.php?url=".$res[$i]['url_images']."&width=500&height=500' alt='imageArticle'>
                     <h4 class='articleTitre'>".$res[$i]['nom']."</h4>
                     <div class='articleListGenre'>");
                         for($y=0;$y<count($resGenreJeux);$y++){
@@ -90,14 +93,26 @@ $conn = new PDO('mysql:host=localhost;dbname=bd_happygame;charset=utf8','root','
                     print("
                     </div>
                     <p class='articlePrix'>".$res[$i]['prix']."€</p>
-                    
-                    <a class='boutonAddToCart'><div class ='articleButtonAjouterPanier' name=".$res[$i]['id']." >AJOUTER AU PANIER</div></a>
-                </div>");
+                    <a class='boutonAddToCart'><div class ='articleButtonAjouterPanier' name=".$res[$i]['id']." >AJOUTER AU PANIER</div></a>");
+                    if(isset($_SESSION["admin"]) && $_SESSION["admin"] == true){
+                        print("<a class='boutonSupprItem' href='api/supprimerJeuBD.php?id=".$res[$i]['id']."'> Supprimer </a>");
+                    }
+                    print("</div>");
+                
                 }
                 ?>
                 </article>
             </section>
         </main>
+        <footer>
+            <article id="logoFooterContainer">
+                <h2>Happy Game</h2>
+            </article>
+            <article id="buttonFooterContainer">
+                <a class="boutonFooter" href="connexionAdmin.php">Administrateur</a>
+            </article>
+        </footer>
+
         <script src="JS/app.js"></script>
         <script src="JS/scriptCarte.js"></script>
     </body>

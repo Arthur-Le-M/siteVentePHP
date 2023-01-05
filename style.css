@@ -213,7 +213,12 @@ header{
     max-height: 80%;
   }
 
-  
+  .boutonModal{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
 /* Fin modal */
 
 /* Notification */
@@ -236,6 +241,23 @@ header{
     border-radius: 5px;
 }
 /*Fin Notif*/
+
+
+/* Footer */
+footer{
+    background-color: #3e3e3e;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.boutonFooter{
+    background-color: #22651b;
+    padding: 10px;
+}
+/*Fin Footer */
 
 /* FIN Page principal */
 
@@ -345,8 +367,18 @@ main{
     margin-top: 30px;
 }
 
+.textAreaForm{
+    background-color:#3e3e3e;
+    border: none;
+    width: 98%;
+    text-align: none;
+    padding: 2%;
+    margin-top: 10px;
+}
+
 .boutonForm{
     margin-top: 30px;
+    margin-bottom: 30px;
     border: none;
     width: 50%;
     background-color:#22651b;
@@ -380,3 +412,87 @@ main{
     font-weight: bold;
 }
 /* Fin Page Paiement */
+
+/* Page connexion Administrateur */
+
+#formConnexionAdmin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    height: 70vh;
+}
+
+/* Fin page connexion Admin */
+
+/* Admin */
+
+.boutonSupprItem{
+    color: red;
+}
+
+#sectionAdmin{
+    background-color:#22651b;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#titreSectionAdmin{
+    margin-bottom: 10px;
+}
+
+.boutonAdmin{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #292929;
+    width: 30%;
+    text-align: center;
+
+}
+
+/* Fin admin */
+
+/* Ajout jeu */
+
+#formulaireAjoutDeJeu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+#selectionGenreAjoutJeu{
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.genreJeuAjoutJeu{
+    background-color: #575757;
+    padding: 3px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.genreJeuAjoutJeu-select{
+    background-color:rgb(216, 216, 216);
+    color: #252525;
+    padding: 3px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.genreJeuAjoutJeu:hover{
+    background-color: #7a7a7a;
+}

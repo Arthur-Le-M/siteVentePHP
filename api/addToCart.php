@@ -9,6 +9,4 @@ else{
     $_SESSION['cart'] = [];
     $_SESSION['cart'][] = $id;
 }
-
-//header('Location: index.php');
 ?>

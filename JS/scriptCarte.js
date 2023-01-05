@@ -21,7 +21,9 @@ images.forEach(image => {
         const modalImage = document.querySelector('#modalImage');
         const modalTitre = document.querySelector('#titreJeuxModal');
         const modalPrix = document.querySelector('#prixJeuModal');
-        const modalDesc = document.querySelector('#descJeuxModal');
+        var modalDesc = document.querySelector('#descJeuxModal');
+        var modalButton = document.querySelector('.boutonModal');
+        console.log(modalButton);
         modalImage.src = this.src;
         //Récupération des information
         parentImage = this.parentNode
@@ -29,8 +31,8 @@ images.forEach(image => {
         var id = parentImage.getAttribute('name')
         modalTitre.innerHTML = enfant[1].innerHTML
         modalPrix.innerHTML = enfant[3].innerHTML
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', 'game.php?id=' + id);
+        xhr = new XMLHttpRequest();
+        xhr.open('GET', 'api/game.php?id=' + id);
         xhr.send();
         xhr.onload = function() {
           if (xhr.status === 200) {
@@ -40,8 +42,10 @@ images.forEach(image => {
             console.error('An error occurred:', xhr.status);
           }
         };
+        //Bouton
+        modalButton.addEventListener("click", () => boutonModalClique(id, modalTitre.innerHTML));
         modal.classList.add('visible');
-      });
+});
     
 });
 
@@ -59,9 +63,38 @@ modalImage.addEventListener('mouseout', ()=>{
     modalImage.style.transform = 'none';
 })
 
+var modalButton = document.querySelector('.boutonModal');
 const modal = document.querySelector('#modal');
 modal.addEventListener('click', function(event){
   if (event.target === modal) {
     modal.classList.remove('visible');
+    modalButton.removeEventListener()
   }
 });
+
+function boutonModalClique(id, titre){
+  url = "api/addToCart.php?id=" + id
+  //Requête ajax
+  xhr = new XMLHttpRequest();
+  xhr.open("GET", url, true);
+  xhr.send();
+  xhr.onreadystatechange = function() {
+  if (xhr.readyState == 4 && xhr.status == 200) {
+    //Réussite
+    afficherTaillePanier()
+    var notifAddCart = document.createElement('div')
+    notifAddCart.className = "notifvisible"
+    notifAddCart.innerHTML = notification.innerHTML
+    notifAddCart.style.bottom = ((10 + 45) * nombreNotif).toString() + "px";
+    notifAddCart.children[0].innerHTML = titre + " à été ajouté au panier"
+    document.body.appendChild(notifAddCart);
+    nombreNotif += 1;
+    setTimeout(function() {
+      notifAddCart.remove()
+      nombreNotif -= 1
+    }, 3000);
+  } else {
+    //Echec
+    }
+  };
+}
