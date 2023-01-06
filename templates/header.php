@@ -14,7 +14,7 @@
         <!-- Head -->
         <header>
             <section id="logoContainer">
-                <a href="index.php"><img class="logo" src="images/logoHappyGames.svg" alt="logo du site"></a>
+                <a href="index.php"><img class="logo" src="images/logoHappyGames.png" alt="logo du site"></a>
             </section>
             <nav id="barreDeNav">
                 <ul>

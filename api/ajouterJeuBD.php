@@ -23,11 +23,9 @@ $req = 'SELECT id FROM game WHERE nom="'.$nom.'" AND prix='.$prix.' AND url_imag
 $req = $conn->prepare($req);
 $req->execute();
 $res = $req->fetch();
-
 $id = $res['id'];
 
 //Ajout des association de genre dans la table genregameassociation
-
 for($i=0; $i<count($listeGenre); $i++){
     $idGenre = $listeGenre[$i];
     $req = "INSERT INTO genregameassociation (idJeux, idGenre) VALUE ($id, $idGenre)";
@@ -35,4 +33,14 @@ for($i=0; $i<count($listeGenre); $i++){
     $req->execute();
 }
 
+//Ajout d'une vignette dans le dossier vignette
+$url = $lienImage;
+$width = 200;
+$height = 200;
+$original_image = imagecreatefromstring(file_get_contents($url));
+$image = imagecreatetruecolor($width, $height);
+imagecopyresampled($image, $original_image, 0, 0, 0, 0, $width, $height, imagesx($original_image), imagesy($original_image));
+imagejpeg($image, "vignettes/$id.jpeg");
+imagedestroy($original_image);
+imagedestroy($image);
 ?>

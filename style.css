@@ -31,7 +31,7 @@ header{
 }
 
 .logo{
-    width: 100px;
+    width: 300px;
 }
 
 #barreDeNav{
@@ -521,4 +521,28 @@ main{
 
 .genreJeuAjoutJeu:hover{
     background-color: #7a7a7a;
+}
+
+.boutonFormAjouterJeu{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: none;
+    width: 50%;
+    background-color:#22651b;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.ajoutJeuErr{
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: red;
+}
+
+.ajoutJeuSucc{
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: green;
 }

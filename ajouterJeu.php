@@ -34,7 +34,7 @@ if($_SESSION['admin'] == false){
                 <label class="labelForm" for="prixJeu">Prix</label>
                 <input class="inputForm" type="number" step="0.01" name="prixJeu" placeholder="Prix du jeu en €">
 
-                <a class="boutonForm">Ajouter</a>
+                <a class="boutonFormAjouterJeu">Ajouter</a>
             </form>
         </main>
 <?php
