@@ -1,44 +1,7 @@
 <?php
 require 'config.php';
+require 'templates/header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <!-- En-tête de la page -->
-        <meta charset="utf-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<link rel="stylesheet" href="style.css" />
-        <title>Site de vente de jeux</title>
-    </head>
-
-    <body>
-        <!-- Corps de la page -->
-        <!-- Head -->
-        <header>
-            <section id="logoContainer">
-                <h2 id="titreLogo">HAPPYGAME</h2>
-            </section>
-            <nav id="barreDeNav">
-                <ul>
-                    <li><a href="index.php" class="lienNavBar">HOME</a></li>
-                    <li><a href="#" class="lienNavBar">SEARCH</a></li>
-                    <li><a href="#" class="lienNavBar">ABOUT</a></li>
-                </ul>
-            </nav>
-            <a id='panierEnHaut' href="cart.php"><img src="images/panier.svg" id="iconPanier" alt="iconPanier">
-                <div class="nbArticleContainer">0</div>
-                <?php
-                /*
-                if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0){
-                    print('<div class="nbArticleContainer">'.count($_SESSION['cart']).'</div>');
-                }
-                */
-                ?>
-                
-            </a>
-            
-        </header>
         <!-- Main -->
         <main>
             <?php 
@@ -106,16 +69,6 @@ require 'config.php';
                 </article>
             </section>
         </main>
-        <footer>
-            <article id="logoFooterContainer">
-                <h2>Happy Game</h2>
-            </article>
-            <article id="buttonFooterContainer">
-                <a class="boutonFooter" href="connexionAdmin.php">Administrateur</a>
-            </article>
-        </footer>
-
-        <script src="JS/app.js"></script>
-        <script src="JS/scriptCarte.js"></script>
-    </body>
-</html>
+<?php
+require 'templates/footer.php';
+?>
